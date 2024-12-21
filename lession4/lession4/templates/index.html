@@ -20,13 +20,3 @@
 </body>
 </html>
 
-use mysql;
-CREATE USER 'convox4'@'172.21.22.209' IDENTIFIED WITH
-mysql_native_password BY 'ConVox@4';
-GRANT ALL ON convoxcces_global.* TO 'convox4'@'172.21.22.209';
-GRANT ALL ON convoxcces_lead_mgmt.* TO 'convox4'@'172.21.22.209';
-GRANT ALL ON convoxcces_txn_log.* TO 'convox4'@'172.21.22.209';
-GRANT ALL ON convoxcces_dnc.* TO 'convox4'@'172.21.22.209';
-GRANT ALL ON convoxcces_historical.* TO 'convox4'@'172.21.22.209';
-GRANT ALL ON convoxcces_call_limits.* TO 'convox4'@'172.21.22.209';
-FLUSH PRIVILEGES;
