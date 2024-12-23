@@ -1,0 +1,29 @@
+{% comment %} {% extends "index.html" %}  {% endcomment %}
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% tailwind_css %}
+  </head>
+  <body>
+    {% block content %}
+        <h1 class="text-blue-800">All lession</h1>
+        <div class="grid grid-cols-3 gap-4 m-4 bg-gray-300 p-5">
+            {% for lessa in lession %}
+                <div class="bg-blue-800 p-3 rounded shadow-lg">
+                  <img src="{{lessa.image.url}}" alt="" />
+                  <h3 class="text-white font-bold py-2">{{lessa.name}}</h3>
+                  <a href="{% url 'lession_detail' lessa.id %}">
+                    <button class="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">{{lessa.type}} - {{lessa.id}}</button>
+                  </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %} 
+    {% block title %} All lession {% endblock %}
+  </body>
+</html>
