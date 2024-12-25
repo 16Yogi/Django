@@ -1,0 +1,9 @@
+{% block title %}
+    {{ lession1.name }} - Lesson Details
+{% endblock %}
+
+{% block content %}
+    <h1>{{ lession1.name }}</h1>
+    <img src="{{ lession1.image.url }}" alt="{{ lession1.name }}">
+    <p>{{ lession1.description }}</p>  
+{% endblock %}
