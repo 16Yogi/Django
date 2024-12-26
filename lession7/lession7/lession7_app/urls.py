@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.app_index, name='app_index'),
     path('app_about/', views.app_about, name='app_about'),
     path('app_contact/', views.app_contact, name='app_contact'),
-    path('<int:lession_id>/', views.lession_details, name='lession_details') 
+    path('lession_store/',views.lession_store_view,name='lession_store'), 
+    path('<int:lession_id>/', views.lession_details, name='lession_details'),
 ]
