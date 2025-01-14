@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Index | All user{% endblock  %}
+
+{% block content %}
+  <h2>All user list</h2>
+  {% for alluser in allusers %}
+    <img src="{{alluser.photo.url}}" alt="">
+    <h4>{{alluser.user.username}}</h4>
+    <p>{{alluser.text}}</p>
+
+    {% comment %} update button {% endcomment %}
+    <a href="{% url 'editUser' alluser.id %}">Update</a>
+    {% comment %} delete button {% endcomment %}
+    <a href="">Delete</a>
+  {% endfor %}
+  {% endblock  %}

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block  title%}
+        Default
+        {% endblock  %}
+    </title>
+</head>
+<body>
+ <div>Layout page</div> 
+ <a href="{% url 'reg1' %}">Reg 1</a>
+ <a href="{% url 'reg2' %}">Reg 2</a>
+ <a href="{% url 'reg1_user_list' %}">Reg1 list</a>
+ <a href="{% url 'reg2_user_list'%}">Reg2 list</a>
+ <a href="{% url 'index' %}">Home</a>
+ <a href="{% url 'adminreg'%}">Admin Reg</a>
+    {% block content %}{% endblock  %}  
+</body>
+</html>

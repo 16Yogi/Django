@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Index page{% endblock%}
+
+{% block content %}
+
+
+{% for  movie in movie_lists  %}
+    <div class="card" style="width: 18rem;">
+      <img src="{{movie.photo.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="{{movie.movieName}}">Card title</h5>
+        <a href="" class="btn btn-primary">Book Here</a>
+      </div>
+    </div>
+{% endfor %}
+
+{% endblock  %}

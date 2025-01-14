@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Project list</h1>
+<a href="{% url 'project_create' %}">Create</a>
+
+<div>
+    {% for project in projects %}
+       <div>
+        <img src="{{ project.photo.url }}" alt="Project Image">
+        <p><b>{{ project.user.username }}</b></p>
+        <p>{{ project.text }}</p>
+        {% if project.user == user%}
+        <a href="{% url 'project_edit' project.id %}">Edit</a>
+        <a href="{% url 'project_delete' project.id %}">Delete</a>
+        {% endif %}
+        <hr>
+       </div>
+    {% empty %}
+       <p>No projects available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

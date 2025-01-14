@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default{% endblock  %}</title>
+</head>
+<body>
+    <div>Nav bar   
+        <a href="{% url 'registration'%}">Registration</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'user_list' %}">User list</a>
+    </div>
+    {% block content %}
+    {% endblock  %}
+    <div>Footer</div>
+</body>
+</html>

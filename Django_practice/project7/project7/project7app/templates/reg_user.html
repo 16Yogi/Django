@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}Index{% endblock  %}
+
+{% block content %}
+<h1>Reg1 User page</h1>
+<hr>
+<h1>Register 1 users</h1>
+{% for users in form_data %}
+<p>{{users.fullname}}</p>
+<p>{{users.email}}</p>
+<p>{{users.state}}</p>
+<img src="{{users.photo.url}}" alt="" style="height:50px;widht:50px;"> 
+{% comment %} <a href="{% url 'reg1Edit' form.id %}">update</a> {% endcomment %}
+{% if form.id %}
+    <a href="{% url 'reg1Edit' form.id %}">Edit</a>
+{% else %}
+    <span>No user ID available</span>
+{% endif %}
+<a href="">Delete</a>
+
+<hr>
+
+{% endfor %}
+
+{% endblock  %}

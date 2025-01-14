@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}Registration page{% endblock%}
+
+{% block content %}
+<h1>This is Registration page</h1>
+<form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <button>Submit</button>
+</form>
+{% endblock  %}

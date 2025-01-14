@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Project 1
+        {% endblock  %}
+    </title>
+</head>
+<body>
+    <div>
+        <b>Navbar</b>
+        <a href="{% url 'project_list'%}">Home</a>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button>Logout</button>
+        </form>
+        {% else %}  
+            <a href="{% url 'register'%}">Register</a>
+            <a href="{% url 'login'%}">Login</a>            
+        {% endif %}
+    </div>
+    {% block content %}{% endblock  %}
+    <div><b>Footer</b></div>
+</body>
+</html>
